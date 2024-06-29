@@ -1,0 +1,25 @@
+<div class="body">
+
+    <div class="container1">
+        <div class="top1">
+            <div class="top1-right">
+                <H1>World Wide Tours</H1>
+            </div>
+            
+
+        </div>
+        <div class="search">
+
+            <input type="text" placeholder="Search.." name="search" searchTerm="">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="top2">
+
+            <a [routerLink]="['register']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Signup</a>
+            <a [routerLink]="['tours-page']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Tours</a>
+            <a [routerLink]="['hotels-page']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Hotels</a>
+            <a href="cart">Cart</a>
+            <a href="logout">Logout</a>
+
+        </div>
+    </div>

@@ -1,0 +1,12 @@
+<div *ngIf="tour">
+    <h1>{{ tour.name }}</h1>
+    <img [src]="tour.image" alt="{{ tour.name }}">
+    <p>{{ tour.description }}</p>
+    <p>Destination: {{ tour.destination }}</p>
+    <p>Price: {{ tour.price }}</p>
+  </div>
+  <div *ngIf="!tour">
+    <p>Tour not found.</p>
+  </div>
+  
+<!-- <a routerLink="/tours/{{id}}">Your Product</a> -->

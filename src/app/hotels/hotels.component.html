@@ -1,0 +1,43 @@
+<!-- Display Tours -->
+<div class="tour-home">
+  <h2>Available Tours</h2>
+  <div *ngIf="tours$ | async as tours">
+    <div *ngFor="let tour of tours">
+      <img [src]="tour.image" alt="{{tour.name}}" style="width:100px;height:100px;">
+      <p>{{tour.name}}</p>
+      <p>{{tour.location}}</p>
+      <p>{{tour.description}}</p>
+      <p>Rating: {{tour.rating}}</p>
+      <button (click)="bookTour(tour.id)">Book</button>
+      <button (click)="deleteTour(tour.id)">Delete</button>
+      <button (click)="editTour(tour)">Edit</button>
+    </div>
+  </div>
+
+  <!-- Form for Adding/Editing Tour -->
+  <h2>{{ editMode ? 'Edit Tour' : 'Add Tour' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+    <div class="container2"></div>
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text"><br>
+      <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched"><i>Name is required.</i></span>
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input id="location" formControlName="location" type="text"><br>
+      <span *ngIf="form.get('location')?.invalid && form.get('location')?.touched"><i>Location is required.</i></span>
+    </div>
+    <div>
+      <label for="rating">Star Rating:</label>
+      <input id="rating" formControlName="rating" type="number" min="1" max="5"><br>
+      <span *ngIf="form.get('rating')?.invalid && form.get('rating')?.touched"><i>Rating is required and must be between 1 and 5.</i></span>
+    </div>
+    <div>
+      <label for="description">Description:</label><br>
+      <input id="description" formControlName="description" type="text"><br>
+      <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched"><i>Description is required.</i></span>
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="footers">{{ editMode ? 'Update Tour' : 'Add Tour' }}</button>
+  </form>
+</div>

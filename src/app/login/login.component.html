@@ -1,0 +1,28 @@
+<div class="tour-home">
+    <h2>Login</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+    <div class="container2">
+      <div>
+        <label for="name">Name:</label><br>
+        <input id="name" formControlName="name" type="text"><br>
+        <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched"><i>Name is required.</i></span>
+      </div>
+      <div>
+        <label for="password">Password:</label><br>
+        <input id="password" formControlName="password" type="password"><br>
+        <span *ngIf="form.get('password')?.invalid && form.get('password')?.touched"><i>Password is required.</i></span>
+      </div>
+      <div>
+        <label for="role">Role:</label><br>
+        <select>
+            <option value="student">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <span *ngIf="form.get('role')?.invalid && form.get('role')?.touched"><i>Role is required.</i></span>
+      </div>
+      <button type="submit" [disabled]="form.invalid">Login</button>
+      <p class="footers" >Don't have an account?<a [routerLink]="['/register']">Signup</a> </p>
+    </div>
+    </form>
+  </div>
+  

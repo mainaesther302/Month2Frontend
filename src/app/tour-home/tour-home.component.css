@@ -1,0 +1,64 @@
+.tour-home{
+    width:80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-right:50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin:auto;
+    border-radius: 20px;
+    align-items: center;
+    margin-top: 30px;
+
+}
+.container1{
+    padding:10px;
+    width:100%;
+    margin: auto;
+}
+.container2 {
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+}
+.container2 label{
+    font-weight: 400px;
+    font-size: 24px;
+}
+.container2 input{
+    width:400px;
+    height:35px;
+    border-radius: 10px;
+}
+.container2 span{
+    color: red;
+    font-size: 14px;
+}
+.container2 .span{
+    color: red;
+    font-size: 14px;
+}
+.container2 button{
+    background-color: #fb9062;
+    color:white;
+    width:220px;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 30px;
+    font-size: 16px;
+}
+.container2 .footers a{
+    text-decoration: none;
+    color:#fb9062;
+    padding:10px;
+}
+.container2 .footers a:hover{
+    color:red;
+}
+

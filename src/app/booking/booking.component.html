@@ -1,0 +1,14 @@
+<div *ngIf="bookings && bookings.length > 0">
+    <h2>Your Bookings</h2>
+    <div *ngFor="let booking of bookings">
+      <h3>{{ booking.name }}</h3>
+      <img [src]="booking.image" alt="{{ booking.name }}">
+      <p>{{ booking.description }}</p>
+      <p>Destination: {{ booking.destination }}</p>
+      <p>Price: {{ booking.price }}</p>
+    </div>
+  </div>
+  <div *ngIf="!bookings || bookings.length === 0">
+    <p>You have no bookings.</p>
+  </div>
+  

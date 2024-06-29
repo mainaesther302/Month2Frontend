@@ -1,0 +1,16 @@
+<div class="mainContainer">
+    <div *ngIf="hotels" class="hotelsContainer">
+      <div *ngFor="let hotel of hotels" class="oneHotel">
+        <div class="hotelImage">
+          <img src="{{ hotel.image }}" alt="Hotel Image">
+        </div>
+        <div class="hotelDetails">
+          <p class="hotelName">{{ hotel.name }}</p>
+          <p class="hotelLocation">{{ hotel.hlocation }}</p>
+          <p class="hotelRating">Rating: {{ hotel.rating }}</p>
+          <button type="submit" class="btn">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

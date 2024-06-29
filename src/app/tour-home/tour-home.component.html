@@ -1,0 +1,41 @@
+<div class="home">
+  <div class="tour-home">
+    <h2>{{ editMode ? 'Edit Tour' : 'Input Tour' }}</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+      <div class="container2">
+        <div>
+          <label for="name">Name:</label><br>
+          <input id="name" formControlName="name" type="text"><br>
+          <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched"><i>Name is required.</i></span>
+        </div>
+        <div>
+          <label for="destination">Destination:</label><br>
+          <input id="destination" formControlName="destination" type="text"><br>
+          <span *ngIf="form.get('destination')?.invalid && form.get('destination')?.touched"><i>Destination is required.</i></span>
+        </div>
+        <div>
+          <label for="description">Description:</label><br>
+          <input id="description" formControlName="description" type="text"><br>
+          <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched"><i>Description is required.</i></span>
+        </div>
+        <div>
+          <label for="price">Price:</label><br>
+          <input id="price" formControlName="price" type="number"><br>
+          <span *ngIf="form.get('price')?.invalid && form.get('price')?.touched"><i>Price is required.</i></span>
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="footers">{{ editMode ? 'Update Tour' : 'Add Tour' }}</button>
+      </div>
+    </form>
+  </div>
+  <div class="tour-list">
+    <h2>Added Tours</h2>
+    <div *ngFor="let tour of tours">
+      <h3>{{ tour.name }}</h3>
+      <p>{{ tour.destination }}</p>
+      <p>{{ tour.description }}</p>
+      <p>{{ tour.price }}</p>
+      <button (click)="onEdit(tour)">Edit</button>
+      <button (click)="onDelete(tour.id)">Delete</button>
+    </div>
+  </div>
+</div>

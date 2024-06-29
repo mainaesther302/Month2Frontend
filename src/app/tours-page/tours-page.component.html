@@ -1,0 +1,11 @@
+<div *ngIf="tours">
+    <div *ngFor="let tour of tours">
+      <p (click)="loadtour(tour.id)"><img [src]="tour.image" alt="{{tour.name}}"></p>
+      <p>{{ tour.name }}</p>
+      <p>{{ tour.destination }}</p>
+      <p>{{ tour.description }}</p>
+      <p>{{ tour.price }}</p>
+      <button type="button" class="btn" (click)="bookTour(tour.id)">Book</button>
+    </div>
+  </div>
+  

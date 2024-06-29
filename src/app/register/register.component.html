@@ -1,0 +1,33 @@
+<div class="tour-home">
+    <h2>Join Us Now</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+        <div class="container2">
+            <div >
+                <label for="name">Name:</label><br>
+                <input id="name" formControlName="name" type="text"><br>
+                <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched"><i>Name is required.</i></span>
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input class="email" formControlName="email" type="email"><br>
+                <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="span">
+                    <p *ngIf="form.get('email')?.hasError('required')"><i>Email is Required.</i></p>
+                    <p><i>Email is not valid.</i></p>
+
+                </div>
+            </div>
+            <div>
+                <label for="password">Password:</label><br>
+                <input id="password" formControlName="password"><br>
+                <span *ngIf="form.get('password')?.invalid && form.get('password')?.touched"><i>Password is
+                        required.</i></span>
+            </div>
+        
+
+        <button type="submit" [disabled]="form.invalid">Sign Up</button>
+    
+        <p class="footers">All ready have an account?<a href="#">Login</a></p>
+    </div>
+    </form>
+</div>
